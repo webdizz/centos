@@ -78,6 +78,17 @@ install_puppet()
     fi
 }
 
+install_ansible()
+{
+    echo "==> Installing Ansible"
+    yum update -y
+    yum upgrade -y
+    yum groupinstall -y 'Development Tools'
+    yum -y install python-setuptools python2-devel
+    easy_install pip
+    pip install ansible
+}
+
 #
 # Main script
 #
@@ -97,6 +108,10 @@ case "${CM}" in
 
   'puppet')
     install_puppet
+    ;;
+
+  'ansible')
+    install_ansible
     ;;
 
   *)
