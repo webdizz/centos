@@ -134,8 +134,31 @@
         "script/update.sh",
         "script/vagrant.sh",
         "script/vmtool.sh",
-        "script/cmtool.sh",
         "script/docker.sh",
+        "script/cmtool.sh"
+      ],
+      "type": "shell"
+    },
+    {
+      "source": "ansible/",
+      "destination": "/tmp",
+      "type": "file"
+    },
+    {
+      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
+      "inline": [
+        "ansible-galaxy install --role-file /tmp/requirements.yml"
+      ],
+      "type": "shell"
+    },
+    {
+      "playbook_file": "ansible/provision.yaml",
+      "extra_arguments": ["--sudo"],
+      "type": "ansible-local"
+    },
+    {
+      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
+      "scripts": [
         "script/cleanup.sh"
       ],
       "type": "shell"

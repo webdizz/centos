@@ -1,0 +1,3 @@
+- src: https://github.com/webdizz/ansible-java-oracle.git
+  version: master
+  name: java-oracle
