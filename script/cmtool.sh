@@ -80,13 +80,14 @@ install_puppet()
 
 install_ansible()
 {
+    #yum groupinstall -y 'Development Tools'
+    echo "==> Installing Epel repository"
+    rpm -Uvh http://download.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
     echo "==> Installing Ansible"
-    yum update -y
-    yum upgrade -y
-    yum groupinstall -y 'Development Tools'
-    yum -y install python-setuptools python2-devel
+    yum -y install libyaml python-setuptools python2-devel python-simplejson tar unzip ansible git
+    echo "==> Installing Ansible dependencies"
     easy_install pip
-    pip install ansible
+    pip install paramiko PyYAML Jinja2 httplib2
 }
 
 #
