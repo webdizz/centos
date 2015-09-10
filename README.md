@@ -9,10 +9,16 @@ using Packer.
 
 64-bit boxes:
 
+* [CentOS 7.1 (64-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos71)
+* [CentOS 7.1 Desktop (64-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos71-desktop)
+* [CentOS 7.1 Core with Docker (64-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos71-docker)
 * [CentOS 7.0 (64-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos70)
 * [CentOS 7.0 Desktop (64-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos70-desktop)
 * [CentOS 7.0 Core with Docker (64-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos70-docker)
-* [CentOS 6.6 (64-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos66)
+* [CentOS 6.7 (64-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos67)
+* [CentOS 6.7 Desktop (64-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos67-desktop)
+* [CentOS 6.7 with Docker (64-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos67-docker/)
+* [CentOS 6.7 (64-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos67)
 * [CentOS 6.6 Desktop (64-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos66-desktop)
 * [CentOS 6.6 with Docker (64-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos66-docker/)
 * [CentOS 6.5 (64-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos65/)
@@ -26,6 +32,7 @@ using Packer.
 
 32-bit boxes:
 
+* [CentOS 6.7 (32-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos67-i386)
 * [CentOS 6.6 (32-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos66-i386)
 * [CentOS 6.5 (32-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos65-i386)
 * [CentOS 6.4 (32-bit)](https://atlas.hashicorp.com/boxcutter/boxes/centos64-i386)
@@ -36,15 +43,11 @@ using Packer.
 ## Building the Vagrant boxes
 
 To build all the boxes, you will need Packer and the desktop virtualization
-software VirtualBox, VMware Fusion, and Parallels Desktop for Mac installed.
-
-Parallels requires that the
-[Parallels Virtualization SDK for Mac](http://www.parallels.com/downloads/desktop)
-be installed as an additional preqrequisite.
+software VirtualBox and VMware Fusion for Mac installed.
 
 A GNU Make `Makefile` drives the process via the following targets:
 
-    make        # Build all the box types (VirtualBox, VMware & Parallels)
+    make        # Build all the box types (VirtualBox and VMware)
     make test   # Run tests against all the boxes
     make list   # Print out individual targets
     make clean  # Clean up build detritus
@@ -155,6 +158,6 @@ is true.
 
 ### Acknowledgments
 
-[SmartyStreets](http://www.smartystreets.com) is providing basebox hosting for the box-cutter project.
+[SmartyStreets](http://www.smartystreets.com) is providing basebox hosting for the boxcutter project.
 
 ![Powered By SmartyStreets](https://smartystreets.com/resources/images/smartystreets-flat.png)

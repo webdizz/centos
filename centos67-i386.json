@@ -20,7 +20,7 @@
       "ssh_wait_timeout": "10000s",
       "tools_upload_flavor": "linux",
       "type": "vmware-iso",
-      "vm_name": "centos66-i386",
+      "vm_name": "centos67-i386",
       "vmx_data": {
         "cpuid.coresPerSocket": "1",
         "memsize": "512",
@@ -63,13 +63,13 @@
         ]
       ],
       "virtualbox_version_file": ".vbox_version",
-      "vm_name": "centos66-i386"
+      "vm_name": "centos67-i386"
     }
   ],
   "post-processors": [
     {
       "keep_input_artifact": false,
-      "output": "box/{{.Provider}}/centos66-i386-{{user `cm`}}{{user `cm_version`}}-{{user `version`}}.box",
+      "output": "box/{{.Provider}}/centos67-i386-{{user `cm`}}{{user `cm_version`}}-{{user `version`}}.box",
       "type": "vagrant"
     }
   ],
@@ -111,10 +111,10 @@
     "http_proxy": "{{env `http_proxy`}}",
     "https_proxy": "{{env `https_proxy`}}",
     "install_vagrant_key": "true",
-    "iso_checksum": "d16aa4a8e6f71fb01fcc26d8ae0e3443ed514c8e",
-    "iso_name": "CentOS-6.6-i386-bin-DVD1.iso",
+    "iso_checksum": "f3aa74fd6ddc7b14ed4cf81db8135aee57814791",
+    "iso_name": "CentOS-6.7-i386-bin-DVD1.iso",
     "iso_path": "iso",
-    "iso_url": "http://archive.kernel.org/centos-vault/6.6/isos/x86_64/CentOS-6.6-x86_64-bin-DVD1.iso",
+    "iso_url": "http://mirrors.kernel.org/centos/6.7/isos/i386/CentOS-6.7-i386-bin-DVD1.iso",
     "no_proxy": "{{env `no_proxy`}}",
     "rsync_proxy": "{{env `rsync_proxy`}}",
     "ssh_password": "vagrant",

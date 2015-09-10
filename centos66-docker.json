@@ -4,7 +4,7 @@
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks6.cfg<enter>"
       ],
-      "disk_size": 10140,
+      "disk_size": 65536,
       "guest_os_type": "centos-64",
       "headless": "{{ user `headless` }}",
       "http_directory": "http",
@@ -31,7 +31,7 @@
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks6.cfg<enter>"
       ],
-      "disk_size": 10140,
+      "disk_size": 65536,
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "guest_os_type": "RedHat_64",
       "hard_drive_interface": "sata",
@@ -63,41 +63,6 @@
         ]
       ],
       "virtualbox_version_file": ".vbox_version",
-      "vm_name": "centos66-docker"
-    },
-    {
-      "boot_command": [
-        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort}}/ks6.cfg<enter>"
-      ],
-      "disk_size": 10140,
-      "guest_os_type": "centos",
-      "http_directory": "http",
-      "iso_checksum": "{{ user `iso_checksum` }}",
-      "iso_checksum_type": "sha1",
-      "iso_urls": [
-        "{{ user `iso_path` }}/{{ user `iso_name` }}",
-        "{{ user `iso_url` }}"
-      ],
-      "parallels_tools_flavor": "lin",
-      "prlctl": [
-        [
-          "set",
-          "{{.Name}}",
-          "--memsize",
-          "512"
-        ],
-        [
-          "set",
-          "{{.Name}}",
-          "--cpus",
-          "1"
-        ]
-      ],
-      "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
-      "ssh_password": "{{ user `ssh_password` }}",
-      "ssh_username": "{{ user `ssh_username` }}",
-      "ssh_wait_timeout": "10000s",
-      "type": "parallels-iso",
       "vm_name": "centos66-docker"
     }
   ],
@@ -146,11 +111,11 @@
     "headless": "",
     "http_proxy": "{{env `http_proxy`}}",
     "https_proxy": "{{env `https_proxy`}}",
-    "install_vagrant_key": true,
+    "install_vagrant_key": "true",
     "iso_checksum": "08be09fd7276822bd3468af8f96198279ffc41f0",
     "iso_name": "CentOS-6.6-x86_64-bin-DVD1.iso",
     "iso_path": "iso",
-    "iso_url": "http://mirrors.kernel.org/centos/6.6/isos/x86_64/CentOS-6.6-x86_64-bin-DVD1.iso",
+    "iso_url": "http://archive.kernel.org/centos-vault/6.6/isos/x86_64/CentOS-6.6-x86_64-bin-DVD1.iso",
     "no_proxy": "{{env `no_proxy`}}",
     "rsync_proxy": "{{env `rsync_proxy`}}",
     "ssh_password": "vagrant",
